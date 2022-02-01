@@ -1,12 +1,19 @@
 import { LayoutForm } from "./layoutForm";
-import { ResultsList } from "./layoutResults";
+import { LayoutResults } from "./layoutResults";
+import { useState } from "react";
 
 export const HomeLayout = () => {
 
+    const [roomState, roomRefresh] = useState([])
+
     return (
         <>
-        <LayoutForm />
-        <ResultsList />
+       <LayoutForm roomState={roomState} roomUpdater={roomRefresh}/>
+        
+       
+        <div id="resultsList">
+        <LayoutResults roomId={roomState.id} />
+        </div>
         </>
     )
 }

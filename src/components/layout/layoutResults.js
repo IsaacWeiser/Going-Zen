@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 
 
-export const ResultsList = (idOfRoom, submitState) =>
+export const LayoutResults = ({roomId}) =>
 {
     const [currentRoomLayouts, updateRoomLayouts] = useState([])
 
@@ -17,7 +17,7 @@ export const ResultsList = (idOfRoom, submitState) =>
 
     //useEffect will keep track of when submit is hit by refreshing the room
     useEffect(()=>{
-        fetch(`http://localhost:8088/rooms/8`)
+        fetch(`http://localhost:8088/rooms/1`)
         .then(room=> room.json())
         .then(room=>{
             let currRoomPics = []
@@ -37,11 +37,11 @@ export const ResultsList = (idOfRoom, submitState) =>
             
             return updateRoomLayouts(currRoomPics)
         })
-    }, [roomPics])
+    }, [])
 
     return (
     <>
-    <h2>test</h2>
+    <h2>Results</h2>
     {
         currentRoomLayouts.map(roomPic=>{
             return <img key={`img--${roomPic.id}`} src={`room_layouts/${roomPic.url}`} />

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { ResultsList } from "./layoutResults";
 
-export const LayoutForm = () =>
+export const LayoutForm = (props) =>
 {
     const [room, updateRoom] = useState([])
 
@@ -90,9 +90,19 @@ export const LayoutForm = () =>
             body: JSON.stringify(room)
         }
 
-       return fetch(`http://localhost:8088/rooms`, postOp)
+       fetch(`http://localhost:8088/rooms`, postOp)
         .then(()=>updateSub(submit+1))
-        
+       
+        console.log("room state " + JSON.stringify(props.roomState))
+
+        document.querySelector("#resultsList").style.display="block";
+    }
+
+    
+
+    if (submit === 0)
+    {
+        //document.querySelector("#resultsList").style.display="none";     
     }
     
 
@@ -115,6 +125,7 @@ export const LayoutForm = () =>
                     let copy  = {...room};
                     copy.name = event.target.value
                     updateRoom(copy)
+                    props.roomUpdater(copy)
                     }
                 }
                 />
@@ -135,6 +146,7 @@ export const LayoutForm = () =>
                     copy.hasNightstand = event.target.checked
                     copy.roomPicIds = imageAssigner(copy)
                     updateRoom(copy)
+                    props.roomUpdater(copy)
                     }
                 }
                 />
@@ -150,6 +162,7 @@ export const LayoutForm = () =>
                     copy.hasDresser = event.target.checked
                     copy.roomPicIds = imageAssigner(copy)
                     updateRoom(copy)
+                    props.roomUpdater(copy)
                     }
                 }
                 />
@@ -165,6 +178,7 @@ export const LayoutForm = () =>
                     copy.hasTable = event.target.checked
                     copy.roomPicIds = imageAssigner(copy)
                     updateRoom(copy)
+                    props.roomUpdater(copy)
                     }
                 }
                 />
