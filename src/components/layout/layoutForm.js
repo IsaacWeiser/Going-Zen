@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { ResultsList } from "./layoutResults";
 
 export const LayoutForm = () =>
 {
@@ -30,16 +31,7 @@ export const LayoutForm = () =>
         updateRoom(startingState)
     },[submit])
 
-
-    const [pics, updatePics] = useState([])
    
-    //this grabs the roomPics
-    useEffect(()=>{
-        fetch(`http://localhost:8088/roomPics`)
-        .then(pics=>pics.json())
-        .then((data)=> updatePics(data))
-    },[])
-    
 
     const imageAssigner = (room) =>
     {
@@ -98,12 +90,14 @@ export const LayoutForm = () =>
             body: JSON.stringify(room)
         }
 
-        fetch(`http://localhost:8088/rooms`, postOp)
+       return fetch(`http://localhost:8088/rooms`, postOp)
         .then(()=>updateSub(submit+1))
+        
     }
     
 
     return (
+        <>
         <form className="layoutForm">
         <h2 className="layoutForm--title">Bed Room</h2>
         <fieldset>
@@ -178,5 +172,6 @@ export const LayoutForm = () =>
         </fieldset>
         <button className="newEmp--btn" onClick={submitRoom}>submit</button>
     </form>
+    </>
     )
 }
