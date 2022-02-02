@@ -44,7 +44,26 @@ export const LayoutResults = (props) =>
         })
     }, [roomPics])
 
-    
+    const saveLayout=(evt)=>{
+        const layoutId = evt.target.id.substring(10)
+
+        const faveObj =
+        {
+            roomId: layoutId,
+            userId: localStorage.getItem("zen_user")
+        }
+
+        let postOp =
+        {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(faveObj)
+        }
+
+        //fetch(`http:localhost:8088/`)
+    }
 
     return (
     <>
@@ -52,7 +71,7 @@ export const LayoutResults = (props) =>
     <h2>Results</h2>
     {
          currentRoomLayouts.map(roomPic=>{
-            return <div id="imageResult" ><img key={`img--${roomPic.id}`} src={`room_layouts/${roomPic.url}`} /><button>Save</button></div>
+            return <div id="imageResult" ><img class="resultImg" key={`img--${roomPic.id}`} src={`room_layouts/${roomPic.url}`} /><div><button onClick={saveLayout} id={`btn-save--${roomPic.id}`}>Save</button></div></div>
         })
     }    
     </div>
