@@ -81,7 +81,7 @@ export const LayoutForm = (props) =>
     {
         evt.preventDefault();
 
-        const postOp =
+        let postOp =
         {
             method: "POST",
             headers: {
@@ -92,6 +92,7 @@ export const LayoutForm = (props) =>
 
        fetch(`http://localhost:8088/rooms`, postOp)
         .then(()=>updateSub(submit+1))
+        .then(()=> props.superSubmit(submit+1))
        
         console.log("room state " + JSON.stringify(props.roomState))
 

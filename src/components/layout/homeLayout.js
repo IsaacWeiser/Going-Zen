@@ -7,6 +7,9 @@ export const HomeLayout = () => {
 
     const [roomState, roomRefresh] = useState([])
     const [numOfRooms, updateCount] = useState([])
+    const [submitClicked, updateSubmit] = useState(0)
+
+    useEffect(()=>{console.log("submit is " + submitClicked)}, [submitClicked])
 
     useEffect(()=>{
         fetch(`http://localhost:8088/rooms`)
@@ -17,11 +20,11 @@ export const HomeLayout = () => {
 
     return (
         <>
-       <LayoutForm roomState={roomState} roomUpdater={roomRefresh}/>
+       <LayoutForm roomState={roomState} roomUpdater={roomRefresh} superSubmit={updateSubmit} />
        
         <div id="resultsList">
             {
-        <LayoutResults roomId={numOfRooms} />
+        <LayoutResults roomId={numOfRooms} submitClicked={submitClicked} />
             }
         </div>
         </>

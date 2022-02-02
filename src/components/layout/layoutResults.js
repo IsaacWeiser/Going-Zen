@@ -2,24 +2,27 @@ import { useState, useEffect } from "react";
 
 
 
-export const LayoutResults = ({roomId}) =>
+export const LayoutResults = (props) =>
 {
-    console.log("rerender roomid: " + roomId)
+    
     const [currentRoomLayouts, updateRoomLayouts] = useState([])
 
     const [roomPics, updatePics] = useState([])
+
+    useEffect(()=>{
+        console.log("submit updated on room " + props.roomId)
+    }, [props.submitClicked])
 
     //initializes the pic state
     useEffect(()=>{
         fetch(`http://localhost:8088/roomPics`)
         .then(data => data.json()) 
         .then(info => updatePics(info))
-    },[roomId])
+    },[props.submitClicked])
 
     //useEffect will keep track of when submit is hit by refreshing the room
     useEffect(()=>{
-        console.log("rmid "+ roomId)
-        fetch(`http://localhost:8088/rooms/${roomId}`)
+        fetch(`http://localhost:8088/rooms/${props.roomId+1}`)
         .then(room=> room.json())
         .then(room=>{
             let currRoomPics = []
@@ -43,7 +46,7 @@ export const LayoutResults = ({roomId}) =>
 
     return (
     <>
-    <div key={roomId}>
+    <div key={props.roomId}>
     <h2>Results</h2>
     {
          currentRoomLayouts.map(roomPic=>{
