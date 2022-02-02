@@ -95,7 +95,7 @@ export const LayoutForm = (props) =>
        
         console.log("room state " + JSON.stringify(props.roomState))
 
-        document.querySelector("#resultsList").style.display="block";
+        //document.querySelector("#resultsList").style.display="block";
     }
 
     
