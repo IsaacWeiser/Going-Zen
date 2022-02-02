@@ -44,13 +44,15 @@ export const LayoutResults = (props) =>
         })
     }, [roomPics])
 
+    
+
     return (
     <>
     <div key={props.roomId}>
     <h2>Results</h2>
     {
          currentRoomLayouts.map(roomPic=>{
-            return <img key={`img--${roomPic.id}`} src={`room_layouts/${roomPic.url}`} />
+            return <div id="imageResult" ><img key={`img--${roomPic.id}`} src={`room_layouts/${roomPic.url}`} /><button>Save</button></div>
         })
     }    
     </div>
