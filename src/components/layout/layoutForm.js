@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { ResultsList } from "./layoutResults";
 
-export const LayoutForm = () =>
+export const LayoutForm = (props) =>
 {
     const [room, updateRoom] = useState([])
 
@@ -30,16 +31,7 @@ export const LayoutForm = () =>
         updateRoom(startingState)
     },[submit])
 
-
-    const [pics, updatePics] = useState([])
    
-    //this grabs the roomPics
-    useEffect(()=>{
-        fetch(`http://localhost:8088/roomPics`)
-        .then(pics=>pics.json())
-        .then((data)=> updatePics(data))
-    },[])
-    
 
     const imageAssigner = (room) =>
     {
@@ -89,7 +81,7 @@ export const LayoutForm = () =>
     {
         evt.preventDefault();
 
-        const postOp =
+        let postOp =
         {
             method: "POST",
             headers: {
@@ -98,12 +90,19 @@ export const LayoutForm = () =>
             body: JSON.stringify(room)
         }
 
-        fetch(`http://localhost:8088/rooms`, postOp)
+       fetch(`http://localhost:8088/rooms`, postOp)
         .then(()=>updateSub(submit+1))
+        .then(()=> props.superSubmit(submit+1))
+       
+        console.log("room state " + JSON.stringify(props.roomState))
+
+        
     }
-    
+
+      
 
     return (
+        <>
         <form className="layoutForm">
         <h2 className="layoutForm--title">Bed Room</h2>
         <fieldset>
@@ -121,6 +120,7 @@ export const LayoutForm = () =>
                     let copy  = {...room};
                     copy.name = event.target.value
                     updateRoom(copy)
+                    props.roomUpdater(copy)
                     }
                 }
                 />
@@ -141,6 +141,7 @@ export const LayoutForm = () =>
                     copy.hasNightstand = event.target.checked
                     copy.roomPicIds = imageAssigner(copy)
                     updateRoom(copy)
+                    props.roomUpdater(copy)
                     }
                 }
                 />
@@ -156,6 +157,7 @@ export const LayoutForm = () =>
                     copy.hasDresser = event.target.checked
                     copy.roomPicIds = imageAssigner(copy)
                     updateRoom(copy)
+                    props.roomUpdater(copy)
                     }
                 }
                 />
@@ -171,6 +173,7 @@ export const LayoutForm = () =>
                     copy.hasTable = event.target.checked
                     copy.roomPicIds = imageAssigner(copy)
                     updateRoom(copy)
+                    props.roomUpdater(copy)
                     }
                 }
                 />
@@ -178,5 +181,6 @@ export const LayoutForm = () =>
         </fieldset>
         <button className="newEmp--btn" onClick={submitRoom}>submit</button>
     </form>
+    </>
     )
 }
