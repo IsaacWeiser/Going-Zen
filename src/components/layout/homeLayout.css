@@ -1,3 +1,7 @@
 #resultsList {
    display:none;
 }
+
+.resultImg {
+    max-width:65%;
+}
