@@ -66,10 +66,6 @@ export const LayoutResults = (props) =>
         .then(()=> console.log("saved fave"))
     }
 
-    const deleteFave = () => 
-    {
-        
-    }
 
     return (
     <>
@@ -81,9 +77,6 @@ export const LayoutResults = (props) =>
                 <img className="resultImg" key={`img--${roomPic.id}`} src={`room_layouts/${roomPic.url}`} />
                 <div>
                     <button onClick={saveLayout} id={`btn-save--${roomPic.id}`}>Save</button>
-                    </div>
-                    <div>
-                        <button onClick={}>Delete Fave</button>
                     </div>
                    </div>
         })
