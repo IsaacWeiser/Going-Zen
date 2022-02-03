@@ -16,9 +16,9 @@ export const FavesList = () =>
                 pics.map(picObj=>{
                     console.log("pics.map picObj: " + JSON.stringify(picObj))
                     //console.log(`picObj.id: ${picObj.id}  roompicid: ${roomPicId}  fave.roomId: ${fave.roomId}`)
-                    if (picObj.id === roomPicId)
+                    if (picObj.id === fave.roomPicId && fave.roomPicId === roomPicId)
                     {
-                        console.log(`picObj.id: ${picObj.id}  roompicid: ${roomPicId}  fave.roomId: ${fave.roomId}`)
+                        console.log(`picObj.id: ${picObj.id}  roompicid: ${roomPicId}  fave.roomId: ${fave.roomId}  fave.roomPicId: ${fave.roomPicId}`)
                         urls.push({url:picObj.url, name: fave.room.name})
                     }
                 })
