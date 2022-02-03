@@ -9,6 +9,8 @@ export const LayoutResults = (props) =>
 
     const [roomPics, updatePics] = useState([])
 
+    
+
     useEffect(()=>{
         console.log("submit updated on room " + props.roomId)
     }, [props.submitClicked])
@@ -64,6 +66,9 @@ export const LayoutResults = (props) =>
 
         fetch(`http://localhost:8088/favorites`, postOp)
         .then(()=> console.log("saved fave"))
+        .then(()=>{
+            document.querySelector(`#${evt.target.id}`).disabled="true"
+        })
     }
 
 
