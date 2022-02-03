@@ -48,7 +48,7 @@ export const LayoutResults = (props) =>
         
         const faveObj =
         {
-            roomId: parseInt(evt.target.id.substring(10)),
+            roomId: parseInt(props.roomId+1),
             userId: parseInt(localStorage.getItem("zen_user"))
         }
 
