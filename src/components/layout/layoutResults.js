@@ -45,12 +45,11 @@ export const LayoutResults = (props) =>
     }, [roomPics])
 
     const saveLayout=(evt)=>{
-        const layoutId = evt.target.id.substring(10)
-
+        
         const faveObj =
         {
-            roomId: layoutId,
-            userId: localStorage.getItem("zen_user")
+            roomId: parseInt(props.roomId+1),
+            userId: parseInt(localStorage.getItem("zen_user"))
         }
 
         let postOp =
@@ -62,7 +61,8 @@ export const LayoutResults = (props) =>
             body: JSON.stringify(faveObj)
         }
 
-        //fetch(`http:localhost:8088/`)
+        fetch(`http://localhost:8088/favorites`, postOp)
+        .then(()=> console.log("saved fave"))
     }
 
     return (
@@ -71,7 +71,7 @@ export const LayoutResults = (props) =>
     <h2>Results</h2>
     {
          currentRoomLayouts.map(roomPic=>{
-            return <div id="imageResult" ><img class="resultImg" key={`img--${roomPic.id}`} src={`room_layouts/${roomPic.url}`} /><div><button onClick={saveLayout} id={`btn-save--${roomPic.id}`}>Save</button></div></div>
+            return <div id="imageResult" ><img className="resultImg" key={`img--${roomPic.id}`} src={`room_layouts/${roomPic.url}`} /><div><button onClick={saveLayout} id={`btn-save--${roomPic.id}`}>Save</button></div></div>
         })
     }    
     </div>
