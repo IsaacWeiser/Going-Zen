@@ -55,7 +55,7 @@ export const FavesList = () =>
                 console.log("id? "+JSON.stringify(picObj))
                 return <div>
                     <h3>{picObj.name}</h3>
-                    <img class="faveimg" src={`room_layouts/${picObj.url}`} />
+                    <img className="faveimg" src={`room_layouts/${picObj.url}`} />
                     <div>
                         <button id={`del-btn--fave${picObj.id}`} onClick={deleteFave} >Delete Fave</button>
                     </div>

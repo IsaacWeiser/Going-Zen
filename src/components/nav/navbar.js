@@ -15,18 +15,25 @@ export const NavBar = () => {
         {
             if(option === 1)
             {
-                history.push(`/profile`)
+                history.push(`/`)
+                document.querySelector("#dropdown").value=0
             }
-            else if (option === 2)
+            else if(option === 2)
             {
-                history.push(`/favorites`)
+                history.push(`/profile`)
+                document.querySelector("#dropdown").value=0
             }
             else if (option === 3)
             {
+                history.push(`/favorites`)
+                document.querySelector("#dropdown").value=0
+            }
+            else if (option === 4)
+            {
                 window.localStorage.removeItem("zen_user")
                 history.push('/')
+                document.querySelector("#dropdown").value=0
             }
-
         }
     }
 
@@ -43,17 +50,20 @@ export const NavBar = () => {
                 </Link>
             </li>
             <li className="navbar__item active">
-                    <select onChange={(evt)=>{route(evt)}}>
+                    <select id="dropdown" onChange={(evt)=>{route(evt)}}>
                         <option id="profile-options" value="0">
                             Select an option
                         </option>
                         <option id="option--profile" className="profile-options" value="1">
-                            Profile
+                            Home
                         </option>
                         <option id="option--favorite" className="profile-options" value="2">
-                            Favorites
+                        Profile
                         </option>
                         <option id="option--logout" className="profile-options" value="3">
+                        Favorites
+                        </option>
+                        <option id="option--logout" className="profile-options" value="4">
                             Logout
                         </option>
                     </select>
