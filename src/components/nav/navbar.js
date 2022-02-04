@@ -10,7 +10,8 @@ export const NavBar = () => {
     const route=(event)=>
     {
         const option = parseInt(event.target.value)
-        if (option > 0 && option <3)
+        console.log("opt "+option)
+        if (option > 0 && option <4)
         {
             if(option === 1)
             {
@@ -19,6 +20,11 @@ export const NavBar = () => {
             else if (option === 2)
             {
                 history.push(`/favorites`)
+            }
+            else if (option === 3)
+            {
+                window.localStorage.removeItem("zen_user")
+                history.push('/')
             }
 
         }

@@ -3,6 +3,7 @@ import { LayoutForm } from "./components/layout/layoutForm";
 import { ResultsList } from "./components/layout/layoutResults";
 import  { HomeLayout} from "./components/layout/homeLayout";
 import { FavesList } from "./components/profile/favorites";
+import { ResourcePage } from "./components/about/about";
 
 export const AppViews = () => {
   return (
@@ -12,6 +13,9 @@ export const AppViews = () => {
       </Route>
       <Route exact path="/favorites">
           <FavesList />
+      </Route>
+      <Route exact path="/about">
+          <ResourcePage />
       </Route>
       
     </>
