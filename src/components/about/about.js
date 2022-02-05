@@ -21,6 +21,14 @@ Historically, as well as in many parts of the contemporary Chinese world, feng s
     <li>career</li>
     <li>helpful people</li>
 </ul>
+<h4>Resources</h4>
+<ul>
+    <li><a>https://www.thespruce.com/what-is-feng-shui-1275060</a></li>
+    <li><a>https://www.thespruce.com/create-good-feng-shui-in-your-home-1275057</a></li>
+    <li><a>https://www.craneandcanopy.com/pages/101-what-is-feng-shui</a></li>
+    <li><a>https://www.nationalgeographic.org/encyclopedia/feng-shui/</a></li>
+    <li><a>https://en.wikipedia.org/wiki/Feng_shui</a></li>
+</ul>
         </>
     )
 }
