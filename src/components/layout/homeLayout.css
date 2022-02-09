@@ -1,7 +1,21 @@
 #resultsList {
    display:none;
+   margin-left: 25%;
 }
 
 .resultImg {
     max-width:65%;
+}
+
+#layoutForm {
+    background-color: rgba(176, 178, 179, 0.71);
+}
+
+#layoutFomr input{
+
+    padding-bottom:100%;
+}
+
+#resList-name-title{
+    text-align: center;
 }

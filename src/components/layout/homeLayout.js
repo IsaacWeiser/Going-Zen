@@ -26,13 +26,14 @@ export const HomeLayout = () => {
 
     return (
         <>
-       <LayoutForm roomState={roomState} roomUpdater={roomRefresh} superSubmit={updateSubmit} />
-       
-        <div id="resultsList">
-            {
-        <LayoutResults roomId={numOfRooms} submitClicked={submitClicked} />
-            }
+        <div id="layoutForm">       
+        <LayoutForm roomState={roomState} roomUpdater={roomRefresh} superSubmit={updateSubmit} />
         </div>
+       
+        
+          
+        <LayoutResults roomId={numOfRooms} submitClicked={submitClicked} roomState={roomState} />
+          
         </>
     )
 }
