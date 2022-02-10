@@ -79,8 +79,8 @@ export const LayoutResults = (props) =>
     <>
     <Typography id="resList-name-title" variant="h4">{`Layouts for ${currRoomName}`}</Typography>
     <div id="resultsList">
-    <div id="result-list">
-<ImageList sx={{ width: '65%', height: 'auto' }} cols={1} rowHeight={'auto'}>
+    <div className="result-list">
+<ImageList sx={{ width: '75%', height: 'auto' }} cols={1} rowHeight={'auto'}>
       {currentRoomLayouts.map((roomPic) => (
         <ImageListItem key={roomPic.id}>
           <img

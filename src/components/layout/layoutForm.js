@@ -16,7 +16,7 @@ export const LayoutForm = (props) => {
   //use effect for initial render and creates an object in which the initial values are set to false
   useEffect(() => {
     const startingState = {
-      name: "",
+      name: "Your Un-named Room",
       hasNightstand: false,
       hasDresser: false,
       hasTable: false,
@@ -125,6 +125,11 @@ export const LayoutForm = (props) => {
               onChange={(event) => {
                 let copy = { ...room };
                 copy.name = event.target.value;
+                if(copy.name === "")
+                {
+                    copy.name= "Your Un-Named Room"
+                    updateRoom(copy)
+                }
                 updateRoom(copy);
                 props.roomUpdater(copy);
               }}

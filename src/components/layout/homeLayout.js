@@ -14,6 +14,7 @@ export const HomeLayout = () => {
         if (submitClicked > 0)
         {
         document.querySelector("#resultsList").style.display="block"
+        document.querySelector("#resList-name-title").style.display="block"
         }
     }, [submitClicked])
 

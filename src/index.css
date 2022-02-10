@@ -54,8 +54,18 @@ code {
   width:160%;
 }
 
-#result-list{
+.result-list{
   height:55em;
   overflow: auto;
   margin-top: 2em;
 }
+
+#faves-list{
+  margin-left:15%;
+  height: 65em;
+}
+
+#faves-title{
+  text-align: center;
+}
+

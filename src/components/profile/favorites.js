@@ -11,19 +11,14 @@ export const FavesList = () =>
     const [deleted, updateDelete] = useState(0)
 
     useEffect(()=>{
-        console.log("faves state: " + JSON.stringify(faves))
         fetch(`http://localhost:8088/roomPics`)
         .then(pics=>pics.json())
         .then((pics)=>{
             let urls = []
             faves.map(fave=> fave.room.roomPicIds.map(roomPicId =>{
-                console.log("fave.room.roomPicIds[]: " + JSON.stringify(roomPicId))
-                pics.map(picObj=>{
-                    console.log("pics.map picObj: " + JSON.stringify(picObj))
-                    //console.log(`picObj.id: ${picObj.id}  roompicid: ${roomPicId}  fave.roomId: ${fave.roomId}`)
+                                pics.map(picObj=>{
                     if (picObj.id === fave.roomPicId && fave.roomPicId === roomPicId)
                     {
-                        console.log(`picObj.id: ${picObj.id}  roompicid: ${roomPicId}  fave.roomId: ${fave.roomId}  fave.roomPicId: ${fave.roomPicId}`)
                         urls.push({url:picObj.url, name: fave.room.name, id:fave.id})
                     }
                 })
@@ -39,7 +34,6 @@ export const FavesList = () =>
         .then((faves)=>{
             return updateFaves(faves.filter(fave=>fave.userId === parseInt(localStorage.getItem("zen_user"))))
         })
-        .then(()=> console.log("faves state: " + JSON.stringify(faves)))
     },[deleted])
 
 
@@ -54,9 +48,9 @@ export const FavesList = () =>
 
     return(
         <>
-        <Typography variant="h2">Your Faves</Typography>
-
-        <ImageList sx={{width:'65%', height:'auto'}} cols={1} rowheight={'auto'}>
+        <Typography variant="h2" id="faves-title">Your Faves</Typography>
+        <div className="result-list" id="faves-list">
+        <ImageList sx={{width:'85%', height:'auto'}} cols={1} rowheight={'auto'}>
             {
                 pics.map(picObj=>(
                     <ImageListItem key={`listItem--${picObj.id}`}>
@@ -91,6 +85,7 @@ export const FavesList = () =>
                             </ImageListItem>
                 ))}
                 </ImageList>
+                </div>
         </>
     )
 }
