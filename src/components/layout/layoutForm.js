@@ -26,8 +26,10 @@ export const LayoutForm = (props) => {
     //dom clear
     document.querySelector("#nameInput").value = "";
     document.querySelector("#nightstandSelect").checked = false;
+    document.querySelector("#nightstandSelect").checkedIcon = false;
     document.querySelector("#dresserSelect").checked = false;
     document.querySelector("#tableSelect").checked = false;
+    console.log(document.querySelector("#nightstandSelect").checked)
 
     updateRoom(startingState);
   }, [submit]);
