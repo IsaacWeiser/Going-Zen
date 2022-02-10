@@ -5,13 +5,17 @@ import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
-
+import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
 
 export const LayoutForm = (props) => {
   const [room, updateRoom] = useState([]);
 
   //this state tracks submissions
   const [submit, updateSub] = useState(0);
+
+  const [check3, setCheck3] =useState(false)
+  const [check1, setCheck1] =useState(false)
+  const [check2, setCheck2] =useState(false)
 
   //use effect for initial render and creates an object in which the initial values are set to false
   useEffect(() => {
@@ -23,13 +27,16 @@ export const LayoutForm = (props) => {
       roomPicIds: [28, 29],
     };
 
-    //dom clear
+
+   // console.log(document.querySelector("#nightstandSelect").ownerState)
+    
+   
+   //dom clear
     document.querySelector("#nameInput").value = "";
-    document.querySelector("#nightstandSelect").checked = false;
-    document.querySelector("#nightstandSelect").checkedIcon = false;
-    document.querySelector("#dresserSelect").checked = false;
-    document.querySelector("#tableSelect").checked = false;
-    console.log(document.querySelector("#nightstandSelect").checked)
+    setCheck3(false)
+    setCheck2(false)
+    setCheck1(false)
+    
 
     updateRoom(startingState);
   }, [submit]);
@@ -151,8 +158,10 @@ export const LayoutForm = (props) => {
         <div>
         <fieldset>
           <div className="form-group">
-          <FormControlLabel control={
-            <Checkbox  id="nightstandSelect" onChange={(event) => {
+          <FormControlLabel id="test" control={
+            <Checkbox  checked={check3} id="nightstandSelect" onChange={(event) => {
+                setCheck3(!check3)
+                console.log(event.target.checked)
                 let copy = { ...room };
                 copy.hasNightstand = event.target.checked;
                 copy.roomPicIds = imageAssigner(copy);
@@ -160,7 +169,8 @@ export const LayoutForm = (props) => {
                 props.roomUpdater(copy);
               }} />} label="Night Stand" />              
             <FormControlLabel control={
-            <Checkbox  id="dresserSelect" onChange={(event) => {
+            <Checkbox  checked={check1}id="dresserSelect" onChange={(event) => {
+                setCheck1(!check1)
                 let copy = { ...room };
                 copy.hasDresser = event.target.checked;
                 copy.roomPicIds = imageAssigner(copy);
@@ -168,7 +178,8 @@ export const LayoutForm = (props) => {
                 props.roomUpdater(copy);
               }} />} label="Dresser" />
             <FormControlLabel control={
-            <Checkbox  id="tableSelect" onChange={(event) => {
+            <Checkbox checked={check2} id="tableSelect" onChange={(event) => {
+                setCheck2(!check2)
                 let copy = { ...room };
                 copy.hasTable = event.target.checked;
                 copy.roomPicIds = imageAssigner(copy);
