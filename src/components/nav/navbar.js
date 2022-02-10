@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "../nav/navbar.css"
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+//import "../../../public/background/"
 
 export const NavBar = () => {
 
@@ -46,7 +47,7 @@ export const NavBar = () => {
             </li>
             <li className="navbar__item active">
                 <Link  className="navbar__link" to="/profile">
-                    <img id="profile--img" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpre00.deviantart.net%2F67de%2Fth%2Fpre%2Fi%2F2013%2F005%2F7%2F9%2Fcircle_profile_by_pdogkasper-d5qkroq.png&f=1&nofb=1"></img>
+                    <img id="profile--img" src="background/ZEN_ref.png"></img>
                 </Link>
             </li>
             <li className="navbar__item active">
