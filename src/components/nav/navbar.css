@@ -1,8 +1,7 @@
 .navbar {
     display: flex;
     flex-wrap: nowrap;
-    justify-content: left;
-    background-color: gainsboro;
+    justify-content: space-between;
 }
 
 .navbar__item {
@@ -10,6 +9,10 @@
     list-style-type: none;
 }
 
-#profile--img {
-    max-width:15%
+#profile--img{
+    max-width:100px;
+}
+
+#composition-button{
+    width:100px;
 }
