@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useEffect } from "react/cjs/react.development";
+import "./profile.css"
+import { Typography } from "@mui/material";
+import { Link } from "@mui/material";
 
 export const ProfilePage =() =>
 {
@@ -18,10 +21,13 @@ export const ProfilePage =() =>
 
     return (
         <>
-        <h2>Profile</h2>
-        <h1>{currUser.name}</h1>
-        <h4>{currUser.email}</h4>
-        <h6><a onClick={()=> history.push("/favorites")}>View Faves</a></h6>
+        <div id="profPage">
+            <Typography variant="h2">Profile</Typography>
+        <img id="prof-img" src="https://webstockreview.net/images/profile-icon-png.png"></img>
+        <Typography variant="h1">{currUser.name}</Typography>
+        <Typography variant="h4">{currUser.email}</Typography>
+        <Typography variant="h6" onClick={()=> history.push("/favorites")}><Link>View Faves</Link></Typography>
+        </div>
         </>
     )
 }

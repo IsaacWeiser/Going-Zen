@@ -95,7 +95,7 @@ export const NavBar = () => {
                   placement === "bottom-start" ? "left top" : "left bottom"
               }}
             >
-              <Paper>
+              <Paper id="ismenu">
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList
                     autoFocusItem={open}

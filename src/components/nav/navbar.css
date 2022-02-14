@@ -1,6 +1,7 @@
 .navbar {
     display: flex;
     flex-wrap: nowrap;
+    align-items: stretch;
     justify-content: space-between;
 }
 
@@ -15,4 +16,18 @@
 
 #composition-button{
     width:100px;
+}
+
+
+
+#root > article > section:nth-child(1) > div > div > div{
+    padding-left:3em;
+}
+
+#root > article > section:nth-child(1){
+    background-color: rgba(198,239,152,60);
+}
+
+#composition-button{
+    padding-top:1.5em;
 }
