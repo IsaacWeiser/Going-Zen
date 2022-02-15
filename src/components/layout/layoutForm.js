@@ -118,10 +118,12 @@ export const LayoutForm = (props) => {
     <>
     <article>
       <form className="layoutForm">
+      <Typography id="layout-form--intro" variant="h1">Layout Form</Typography>    
+        <Typography id="intro-subTit" variant="body">Enter the details of your bed room below:</Typography>
           <section className="roomNameInput">
-          <div>
-        <Typography className="layoutForm--title" variant="h4">
-          Bed Room
+          <div>    
+        <Typography className="layoutForm--title" variant="h6">
+          Bed Room:
         </Typography>
         </div>
         <div>

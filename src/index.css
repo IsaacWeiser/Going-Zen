@@ -23,6 +23,8 @@ code {
   display:flex;
   justify-content: flex-start;
   align-items: center;
+  flex-wrap: wrap;
+  margin-bottom:1rem;
 }
 
 #roomName > div > div {
@@ -33,6 +35,7 @@ code {
   display:flex;
   flex-direction:column;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .layoutForm {
@@ -43,6 +46,8 @@ code {
 
 #bottomRow{
   display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
 }
 
 #bttnDiv{
@@ -51,7 +56,7 @@ code {
 
 #bttnDiv > button {
   height: 80%;
-  width:160%;
+  max-width:160%;
 }
 
 .result-list{
@@ -69,3 +74,11 @@ code {
   text-align: center;
 }
 
+#layout-form--intro{
+  margin-bottom:1rem;
+  margin-top:1rem;
+}
+
+#intro-subTit{
+  margin-bottom:2rem;
+}

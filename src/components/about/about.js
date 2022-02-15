@@ -17,7 +17,7 @@ export const ResourcePage = () =>
     return (
         <>
         <div id="about">
-        <Typography variant="h2">About Feng Shui</Typography>
+        <Typography id="about-title" variant="h2">About Feng Shui</Typography>
         <Typography>Feng shui also known as Chinese geomancy, is an ancient Chinese traditional practice which claims 
             to use energy forces to harmonize individuals with their surrounding environment. The term feng shui means, 
             literally, "wind-water". From ancient times, landscapes and bodies of water were thought to direct the flow of 
