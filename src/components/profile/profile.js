@@ -22,7 +22,7 @@ export const ProfilePage =() =>
     return (
         <>
         <div id="profPage">
-            <Typography variant="h2">Profile</Typography>
+            <Typography id="prof-title" variant="h2">Profile</Typography>
         <img id="prof-img" src="https://webstockreview.net/images/profile-icon-png.png"></img>
         <Typography variant="h1">{currUser.name}</Typography>
         <Typography variant="h4">{currUser.email}</Typography>
