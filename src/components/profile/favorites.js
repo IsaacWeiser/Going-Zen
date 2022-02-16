@@ -48,7 +48,9 @@ export const FavesList = () =>
 
     return(
         <>
+        <div id="faves title">
         <Typography variant="h2" id="faves-title">Your Faves</Typography>
+        </div>
         <div className="result-list" id="faves-list">
         <ImageList sx={{width:'85%', height:'auto'}} cols={1} rowheight={'auto'}>
             {
