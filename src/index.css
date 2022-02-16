@@ -16,7 +16,7 @@ code {
 
 #nameInput{
   margin: -8px 14px;
-  width:40em;
+  width:100%;
 }
 
 .roomNameInput{
@@ -29,8 +29,8 @@ code {
 
 #roomName > div > div {
   margin-left:10px;
+  width:100%;
 }
-
 #furnitureChoices {
   display:flex;
   flex-direction:column;
@@ -42,6 +42,7 @@ code {
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin-top:1em;
 }
 
 #bottomRow{
