@@ -1,6 +1,8 @@
 #resultsList {
    display:none;
-   margin-left: 20%;
+   margin-left: auto;
+   width: 60%;
+   margin-right: auto;
 }
 
 .resultImg {
@@ -24,4 +26,11 @@
 #resList-name-title{
     text-align: center;
     display: none;
+    background-color: rgba(198,239,152,0.71);
+    padding-top: 0.75%;
+    padding-bottom: 0.75%;
+}
+
+#faves-btn{
+    color:rgba(198,239,152,60);
 }
