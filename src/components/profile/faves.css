@@ -15,3 +15,7 @@
 #faves-list{
     margin-top:0;
 }
+
+#faves-list > ul{
+    width:100%;
+}

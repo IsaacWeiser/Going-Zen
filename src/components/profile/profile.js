@@ -26,7 +26,7 @@ export const ProfilePage =() =>
         <img id="prof-img" src="https://webstockreview.net/images/profile-icon-png.png"></img>
         <Typography variant="h1">{currUser.name}</Typography>
         <Typography variant="h4">{currUser.email}</Typography>
-        <Typography variant="h6" onClick={()=> history.push("/favorites")}><Link>View Faves</Link></Typography>
+        <Typography id="faves-btn" variant="h6" onClick={()=> history.push("/favorites")}><Link color="rgba(198,244,192,60)">View Faves</Link></Typography>
         </div>
         </>
     )

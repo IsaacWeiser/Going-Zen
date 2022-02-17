@@ -5,10 +5,14 @@
     margin-right: auto;
     border-right: 3px solid gray;
     border-bottom: 4px solid gray;
+    margin-top:2%;
+    margin-bottom: 5%;
 }
 
 #about-title{
     text-align: center;
+    padding-top:5%;
+    padding-bottom: 2%;
 }
 
 #about > div:nth-child(4) > nav > ul
@@ -24,7 +28,17 @@
     padding-left: 1em;
 }
 
-#about p{
-    padding-left: 1em;
-    padding-right: 1em;
+#about h6{
+    padding-left: 2em;
+    padding-right: 2em;
 }
+
+.list{
+    padding-top:0.5%;
+    padding-bottom: 1%;
+}
+
+.list-title{
+    padding-top:3%;
+}
+
