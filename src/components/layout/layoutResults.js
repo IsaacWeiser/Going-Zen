@@ -19,7 +19,6 @@ export const LayoutResults = (props) =>
     
 
     useEffect(()=>{
-        console.log("submit updated on room " + props.roomId)
     }, [props.submitClicked])
 
     //initializes the pic state
@@ -70,7 +69,7 @@ export const LayoutResults = (props) =>
 
         fetch(`http://localhost:8088/favorites`, postOp)
         
-        console.log(`id ${evt}`)
+        
     }
 
 

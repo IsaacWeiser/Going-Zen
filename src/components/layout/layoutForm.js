@@ -28,8 +28,6 @@ export const LayoutForm = (props) => {
     };
 
 
-   // console.log(document.querySelector("#nightstandSelect").ownerState)
-    
    
    //dom clear
     document.querySelector("#nameInput").value = "";
@@ -163,7 +161,6 @@ export const LayoutForm = (props) => {
           <FormControlLabel id="test" control={
             <Checkbox  checked={check3} id="nightstandSelect" onChange={(event) => {
                 setCheck3(!check3)
-                console.log(event.target.checked)
                 let copy = { ...room };
                 copy.hasNightstand = event.target.checked;
                 copy.roomPicIds = imageAssigner(copy);
