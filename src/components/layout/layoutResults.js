@@ -27,7 +27,7 @@ export const LayoutResults = (props) =>
         .then(room=> room.json())
         .then(room=>{
             let currRoomPics = []
-            room.roomPicIds.map(picId =>{
+            room.roomPicIds?.map(picId =>{
                 roomPics.map((picObj)=>
                 {
                     if (picId === picObj.id)
@@ -66,7 +66,8 @@ export const LayoutResults = (props) =>
         
     }
 
-
+// counter for layout options
+let counter=0;
 
     return (
     <>
@@ -89,7 +90,7 @@ export const LayoutResults = (props) =>
                   'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, ' +
                   'rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
               }}
-              title={`Layout ${roomPic.id} `}
+              title={`${currRoomName}-${counter+=1} `}
               position="top"
               id={roomPic.id}
               actionIcon={
