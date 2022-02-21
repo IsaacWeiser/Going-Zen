@@ -5,10 +5,12 @@ import "./profile.css"
 import { Typography } from "@mui/material";
 import { Link } from "@mui/material";
 
+//sets up profile page with name, email, pic, and faves option
 export const ProfilePage =() =>
 {
     const [currUser, updateUser] = useState({})
 
+    //gets current user object
     useEffect(()=>{
         fetch(`http://localhost:8088/users`)
         .then(users=> users.json())

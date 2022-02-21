@@ -1,8 +1,6 @@
-import { Link } from "react-router-dom";
 import "../nav/navbar.css"
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import * as React from "react";
-import Button from "@mui/material/Button";
 import ClickAwayListener from "@mui/material/ClickAwayListener";
 import Grow from "@mui/material/Grow";
 import Paper from "@mui/material/Paper";
@@ -25,6 +23,7 @@ export const NavBar = () => {
        const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
 
+  //allows you to open and close menu
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
   };

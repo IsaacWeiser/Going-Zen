@@ -5,7 +5,8 @@ import { NavBar } from "./components/nav/navbar";
 import { Login } from "./components/auth/Login"
 import { Register } from "./components/auth/Register";
 
-
+// determines what user can see based on whether or not they are logged in
+// handles routing for log in and registration
 export const Zen = () => (
   <>
     <Route

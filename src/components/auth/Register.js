@@ -1,7 +1,10 @@
 import React, { useRef, useState } from "react"
 import { useHistory } from "react-router-dom"
 import "./Login.css"
+import { Typography } from "@mui/material";
+import { Button } from "@mui/material";
 
+// allows new users to register for the site
 export const Register = (props) => {
     const [user, setUser] = useState({})
     const conflictDialog = useRef()
@@ -54,7 +57,7 @@ export const Register = (props) => {
             </dialog>
 
             <form className="form--login" onSubmit={handleRegister}>
-                <h1 className="h3 mb-3 font-weight-normal">Please Register for Going Zen</h1>
+                <Typography variant="h1" className="h3 mb-3 font-weight-normal">Please Register for Going Zen</Typography>
                 <fieldset>
                     <label htmlFor="name"> Full Name </label>
                     <input onChange={updateCustomer}
@@ -66,7 +69,7 @@ export const Register = (props) => {
                     <input onChange={updateCustomer} type="email" id="email" className="form-control" placeholder="Email address" required />
                 </fieldset>
                 <fieldset>
-                    <button type="submit"> Register </button>
+                    <Button variant="contained" type="submit"> Register </Button>
                 </fieldset>
             </form>
         </main>

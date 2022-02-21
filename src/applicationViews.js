@@ -4,6 +4,7 @@ import { FavesList } from "./components/profile/favorites";
 import { ResourcePage } from "./components/about/about";
 import { ProfilePage } from "./components/profile/profile";
 
+//establishes the routing for all non registration related pages
 export const AppViews = () => {
   return (
     <>

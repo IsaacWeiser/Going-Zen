@@ -2,7 +2,10 @@ import React, { useRef, useState } from "react"
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom"
 import "./Login.css"
+import { Typography } from "@mui/material";
+import { Button } from "@mui/material";
 
+//allows users to log in to the site
 export const Login = () => {
     const [email, set] = useState("")
     const existDialog = useRef()
@@ -14,6 +17,7 @@ export const Login = () => {
             .then(user => user.length ? user[0] : false)
     }
 
+    //routes you to homepage upon successful login
     const handleLogin = (e) => {
         e.preventDefault()
         existingUserCheck()
@@ -36,8 +40,9 @@ export const Login = () => {
 
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
-                    <h1>Going Zen</h1>
-                    <h2>Please sign in</h2>
+                    <Typography variant="h1">Going Zen</Typography>
+                    <Typography variant="h6">Please sign in</Typography>
+                    <div className="logInField">
                     <fieldset>
                         <label htmlFor="inputEmail"> Email address </label>
                         <input type="email"
@@ -47,14 +52,13 @@ export const Login = () => {
                             required autoFocus />
                     </fieldset>
                     <fieldset>
-                        <button type="submit">
-                            Sign in
-                        </button>
+                        <Button variant="contained" type="submit">Sign In</Button>
                     </fieldset>
+                    </div>
                 </form>
             </section>
             <section className="link--register">
-                <Link to="/register">Not a member yet?</Link>
+                <Link id="regButton" to="/register">Not a member yet?</Link>
             </section>
         </main>
     )

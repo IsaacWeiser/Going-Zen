@@ -10,7 +10,7 @@ import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import { Link } from "@mui/material";
 import ListItemButton from '@mui/material/ListItemButton';
 
-
+// this page has info about feng shui, has a title, paragraph, and 2 lists
 export const ResourcePage = () =>
 {
 
