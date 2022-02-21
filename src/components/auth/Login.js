@@ -5,6 +5,7 @@ import "./Login.css"
 import { Typography } from "@mui/material";
 import { Button } from "@mui/material";
 
+//allows users to log in to the site
 export const Login = () => {
     const [email, set] = useState("")
     const existDialog = useRef()
@@ -16,6 +17,7 @@ export const Login = () => {
             .then(user => user.length ? user[0] : false)
     }
 
+    //routes you to homepage upon successful login
     const handleLogin = (e) => {
         e.preventDefault()
         existingUserCheck()

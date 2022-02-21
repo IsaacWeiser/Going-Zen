@@ -4,7 +4,7 @@ import "./Login.css"
 import { Typography } from "@mui/material";
 import { Button } from "@mui/material";
 
-
+// allows new users to register for the site
 export const Register = (props) => {
     const [user, setUser] = useState({})
     const conflictDialog = useRef()

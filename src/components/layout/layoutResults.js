@@ -7,19 +7,12 @@ import { Typography } from "@mui/material";
 
 
 export const LayoutResults = (props) =>
-{
-    let keyVal =0;
-    
+{    
     const [currentRoomLayouts, updateRoomLayouts] = useState([])
 
     const [roomPics, updatePics] = useState([])
 
     const [currRoomName, updateRoomName] = useState("")
-
-    
-
-    useEffect(()=>{
-    }, [props.submitClicked])
 
     //initializes the pic state
     useEffect(()=>{
@@ -49,6 +42,7 @@ export const LayoutResults = (props) =>
         })
     }, [roomPics])
 
+    // saves the layout you want with the correct room id , userid, and picid as a favorite object
     const saveLayout=(evt)=>{
 
         const faveObj =

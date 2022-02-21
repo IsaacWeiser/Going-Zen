@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import {Button, Typography, Checkbox, FormControlLabel, TextField} from "@mui/material";
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
-import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
+
 
 export const LayoutForm = (props) => {
   const [room, updateRoom] = useState([]);
@@ -112,6 +111,7 @@ export const LayoutForm = (props) => {
       .then(() => props.superSubmit(submit + 1));
   };
 
+  //when setting choices updates local state and uses props and callback functions to updates the parent's state
   return (
     <>
     <article>

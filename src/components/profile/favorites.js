@@ -3,13 +3,19 @@ import "../profile/faves.css"
 import { Typography, ImageListItemBar, ImageList, ImageListItem, IconButton } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
 
-
+//responsible for filling the favorites list and handling deletions of favorite objects
 export const FavesList = () =>
 {
+    // for favorite objects of current user
     const [faves, updateFaves] = useState([])
+    //stores custom object array for pics and names of faves
     const [pics, updatePics] = useState([])
+    //this tracks deletions of faves 
     const [deleted, updateDelete] = useState(0)
 
+    // initializes and on the update of your favorites list
+    //matches the objects that contain the corresponding favorite images and their names
+    // and places that info into a single object which is pushed into an array and then updates the pics state
     useEffect(()=>{
         fetch(`http://localhost:8088/roomPics`)
         .then(pics=>pics.json())
@@ -28,6 +34,7 @@ export const FavesList = () =>
         
     },[faves])
 
+    //when the deleted state updates, update the fave state with all the remaining favorites of the current user
     useEffect(()=>{
         fetch(`http://localhost:8088/favorites?_expand=room&expand_roomPics`)
         .then((faves)=> faves.json())
@@ -36,14 +43,11 @@ export const FavesList = () =>
         })
     },[deleted])
 
-
+// deletes specified favorite (to be used on click)
     const deleteFave = (faveId) =>
     {
         fetch(`http://localhost:8088/favorites/${parseInt(faveId)}`, {method:"DELETE"})
         .then(()=>updateDelete(deleted+1)) 
-
-        
-
     }
 
     return(
