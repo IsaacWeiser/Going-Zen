@@ -7,11 +7,15 @@ in a git connected terminal
 
 ```git clone https://github.com/IsaacWeiser/Going-Zen-api.git```
 
+
+
 on the going zen api repo
 ```json-server -p 8088 database.json```
 
 on the going zen repo
+
 ```cd src/```
+
 ```npm start```
 
 # Primary Features
