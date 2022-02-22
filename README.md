@@ -6,9 +6,11 @@ This site allows you to specify what pieces of furniture you have in your bedroo
 # Installation
 in a git connected terminal
 
-```(git clone https://github.com/IsaacWeiser/Going-Zen.git
+```
+git clone https://github.com/IsaacWeiser/Going-Zen.git
 
-git clone https://github.com/IsaacWeiser/Going-Zen-api.git)```
+git clone https://github.com/IsaacWeiser/Going-Zen-api.git
+```
 
 
 
