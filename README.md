@@ -2,7 +2,9 @@
 
 # Installation
 in a git connected terminal
+
 ```git clone https://github.com/IsaacWeiser/Going-Zen.git```
+
 ```git clone https://github.com/IsaacWeiser/Going-Zen-api.git```
 
 on the going zen api repo
