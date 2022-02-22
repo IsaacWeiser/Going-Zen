@@ -20,9 +20,12 @@ on the going zen api repo
 
 on the going zen repo
 
-```cd src/```
+```
+cd src/
 
-```npm start```
+npm start
+```
+User Login credentials: i@g.com
 
 # Primary Features
 This site allows you to specify what pieces of furniture you have in your bedroom and creates some layout suggestions based upon the principles of feng shui
